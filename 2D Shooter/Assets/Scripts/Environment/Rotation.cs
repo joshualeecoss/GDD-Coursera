@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidRotation : MonoBehaviour
+public class Rotation : MonoBehaviour
 {
+    public Transform target;
     public float speed;
 
     public void Start()
@@ -14,6 +15,6 @@ public class AsteroidRotation : MonoBehaviour
 
     void Update()
     {
-        transform.RotateAround(transform.position, transform.forward, speed * Time.deltaTime);
+        transform.RotateAround(target.transform.position, target.transform.forward, speed * Time.deltaTime);
     }
 }
