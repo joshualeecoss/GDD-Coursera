@@ -1487,6 +1487,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1778676514}
     m_Modifications:
+    - target: {fileID: 598256958414582663, guid: 4a009278bd43c0e4c9bca70b6fd5fd66, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1098216425341989702, guid: 4a009278bd43c0e4c9bca70b6fd5fd66, type: 3}
       propertyPath: m_Name
       value: WallOfAsteroids
@@ -2158,6 +2162,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1778676514}
     m_Modifications:
+    - target: {fileID: 598256958414582663, guid: 4a009278bd43c0e4c9bca70b6fd5fd66, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1098216425341989702, guid: 4a009278bd43c0e4c9bca70b6fd5fd66, type: 3}
       propertyPath: m_Name
       value: WallOfAsteroids (1)
@@ -2208,6 +2216,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6133311919198301996, guid: 4a009278bd43c0e4c9bca70b6fd5fd66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029768565107040380, guid: 4a009278bd43c0e4c9bca70b6fd5fd66, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2599,6 +2611,11 @@ GameObject:
 --- !u!4 &1621181506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4187006898440520334, guid: a337c4024917e26469fcc31327b17c37, type: 3}
+  m_PrefabInstance: {fileID: 4187006898966955724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1621181507 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4187006898440520330, guid: a337c4024917e26469fcc31327b17c37, type: 3}
   m_PrefabInstance: {fileID: 4187006898966955724}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1632365676
@@ -3509,6 +3526,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4187006898440520335, guid: a337c4024917e26469fcc31327b17c37, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 9100000, guid: e47a690b648081145b2b610a02d17175, type: 2}
+    - target: {fileID: 4187006898440520335, guid: a337c4024917e26469fcc31327b17c37, type: 3}
+      propertyPath: myRigidbody
+      value: 
+      objectReference: {fileID: 1621181507}
     - target: {fileID: 4187006898440520435, guid: a337c4024917e26469fcc31327b17c37, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3522,6 +3547,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5292537548762230628, guid: 8f89bfcbf1d986a42b94947daa6b4a6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 8617063456754001801, guid: 8f89bfcbf1d986a42b94947daa6b4a6e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
