@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     public bool gameIsWinnable = true;
     [Tooltip("The number of enemies that must be defeated to win the game")]
     public int enemiesToDefeat = 10;
-    
+
     // The number of enemies defeated in game
     private int enemiesDefeated = 0;
 
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         int numberOfInfiniteSpawners = 0;
         int enemiesFromSpawners = 0;
         int enemiesFromStatic = staticEnemies.Count;
-        foreach(EnemySpawner enemySpawner in enemySpawners)
+        foreach (EnemySpawner enemySpawner in enemySpawners)
         {
             if (enemySpawner.spawnInfinite)
             {
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
             }
             else if (enemiesToDefeat > numberOfEnemiesFoundAtStart)
             {
-                Debug.LogWarning("There are " + enemiesToDefeat + " enemies to defeat but only " + numberOfEnemiesFoundAtStart + 
+                Debug.LogWarning("There are " + enemiesToDefeat + " enemies to defeat but only " + numberOfEnemiesFoundAtStart +
                     " enemies found at start \nThe level can not be completed!");
             }
             else
@@ -227,7 +227,7 @@ public class GameManager : MonoBehaviour
         }
         UpdateUIElements();
     }
-    
+
     /// <summary>
     /// Description:
     /// Resets the current player score
@@ -314,7 +314,7 @@ public class GameManager : MonoBehaviour
             {
                 Instantiate(victoryEffect, transform.position, transform.rotation, null);
             }
-        }     
+        }
     }
 
     [Header("Game Over Settings:")]

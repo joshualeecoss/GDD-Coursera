@@ -11,6 +11,11 @@ public class ScoreDisplay : UIelement
     [Tooltip("The text UI to use for display")]
     public Text displayText = null;
 
+    void Start()
+    {
+        DisplayScore();
+    }
+
     /// <summary>
     /// Description:
     /// Updates the score display
