@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4187006898440520329}
   - component: {fileID: 4187006898440520331}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerFast
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   myRigidbody: {fileID: 0}
   moveSpeed: 10
   rotationSpeed: 60
+  classType: 0
   aimMode: 0
   movementMode: 2
 --- !u!114 &4187006898440520328
@@ -220,8 +221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75388997f8d4264a86b7441dc9ea74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3562651836113712045, guid: aee1688b385340b4bab2b46707955895, type: 3}
+  projectilePrefab:
+  - {fileID: 3562651836113712045, guid: aee1688b385340b4bab2b46707955895, type: 3}
+  - {fileID: 3562651836113712045, guid: f2177d3df08bd814a946b39089a2982e, type: 3}
   projectileHolder: {fileID: 0}
+  playerController: {fileID: 0}
   isPlayerControlled: 1
   fireRate: 0.05
   projectileSpread: 1

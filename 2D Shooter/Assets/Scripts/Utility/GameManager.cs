@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("The player gameobject")]
     public GameObject player = null;
+    public int classType = 0;
+
 
     [Header("Scores")]
     // The current player score in the game
@@ -118,6 +120,7 @@ public class GameManager : MonoBehaviour
             score = PlayerPrefs.GetInt("score");
         }
         UpdateUIElements();
+
         if (printDebugOfWinnableStatus)
         {
             FigureOutHowManyEnemiesExist();
@@ -347,5 +350,16 @@ public class GameManager : MonoBehaviour
             uiManager.allowPause = false;
             uiManager.GoToPage(gameOverPageIndex);
         }
+    }
+
+    public void CharacterButtonClicked(int classType)
+    {
+        this.classType = classType;
+    }
+
+
+    public int GetClassType()
+    {
+        return this.classType;
     }
 }

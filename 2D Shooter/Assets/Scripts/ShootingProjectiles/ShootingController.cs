@@ -10,9 +10,11 @@ public class ShootingController : MonoBehaviour
 {
     [Header("GameObject/Component References")]
     [Tooltip("The projectile to be fired.")]
-    public GameObject projectilePrefab = null;
+    public GameObject[] projectilePrefab = null;
     [Tooltip("The transform in the heirarchy which holds projectiles if any")]
     public Transform projectileHolder = null;
+    public Controller playerController = null;
+    public GameManager gameManager = null;
 
     [Header("Input")]
     [Tooltip("Whether this shooting controller is controled by the player")]
@@ -20,7 +22,7 @@ public class ShootingController : MonoBehaviour
 
     [Header("Firing Settings")]
     [Tooltip("The minimum time between projectiles being fired.")]
-    public float fireRate = 0.05f;
+    public float fireRate = 0f;
 
     [Tooltip("The maximum diference between the direction the" +
         " shooting controller is facing and the direction projectiles are launched.")]
@@ -28,6 +30,7 @@ public class ShootingController : MonoBehaviour
 
     // The last time this component was fired
     private float lastFired = Mathf.NegativeInfinity;
+    private int classType;
 
     [Header("Effects")]
     [Tooltip("The effect to create when this fires")]
@@ -59,7 +62,26 @@ public class ShootingController : MonoBehaviour
     /// </summary>
     private void Start()
     {
+
         SetupInput();
+        SetupBulletType();
+    }
+
+    void SetupBulletType()
+    {
+        if (gameManager != null)
+        {
+            if (gameManager.GetClassType() == 0)
+            {
+                fireRate = 0.05f;
+                classType = 0;
+            }
+            else if (gameManager.GetClassType() == 1)
+            {
+                fireRate = 0.25f;
+                classType = 1;
+            }
+        }
     }
 
     /// <summary>
@@ -102,7 +124,7 @@ public class ShootingController : MonoBehaviour
             {
                 Fire();
             }
-        }   
+        }
     }
 
     /// <summary>
@@ -142,10 +164,10 @@ public class ShootingController : MonoBehaviour
     public void SpawnProjectile()
     {
         // Check that the prefab is valid
-        if (projectilePrefab != null)
+        if (projectilePrefab[classType] != null)
         {
             // Create the projectile
-            GameObject projectileGameObject = Instantiate(projectilePrefab, transform.position, transform.rotation, null);
+            GameObject projectileGameObject = Instantiate(projectilePrefab[classType], transform.position, transform.rotation, null);
 
             // Account for spread
             Vector3 rotationEulerAngles = projectileGameObject.transform.rotation.eulerAngles;

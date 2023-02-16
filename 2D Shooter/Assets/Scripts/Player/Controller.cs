@@ -13,12 +13,17 @@ public class Controller : MonoBehaviour
     public RuntimeAnimatorController animator = null;
     [Tooltip("The Rigidbody2D component to use in \"Astroids Mode\".")]
     public Rigidbody2D myRigidbody = null;
+    public GameManager gameManager = null;
+    private SpriteRenderer sprite;
 
     [Header("Movement Variables")]
     [Tooltip("The speed at which the player will move.")]
     public float moveSpeed = 10.0f;
     [Tooltip("The speed at which the player rotates in asteroids movement mode")]
     public float rotationSpeed = 60f;
+
+    [Header("Character Class")]
+    public int classType = 0;
 
     //The InputManager to read input from
     private InputManager inputManager;
@@ -82,6 +87,7 @@ public class Controller : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        SetupClass();
         SetupInput();
     }
 
@@ -99,6 +105,22 @@ public class Controller : MonoBehaviour
         HandleInput();
         // Sends information to an animator component if one is assigned
         SignalAnimator();
+    }
+
+    private void SetupClass()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+        if (gameManager.GetClassType() == 0)
+        {
+            moveSpeed = 10.0f;
+            rotationSpeed = 60f;
+        }
+        else if (gameManager.GetClassType() == 1)
+        {
+            moveSpeed = 5.0f;
+            rotationSpeed = 50f;
+            sprite.color = Color.red;
+        }
     }
 
     /// <summary>
@@ -262,5 +284,15 @@ public class Controller : MonoBehaviour
                 }
             }
         }
+    }
+
+    public int GetClassType()
+    {
+        return classType;
+    }
+
+    public void SetClassType(int classType)
+    {
+        this.classType = classType;
     }
 }
