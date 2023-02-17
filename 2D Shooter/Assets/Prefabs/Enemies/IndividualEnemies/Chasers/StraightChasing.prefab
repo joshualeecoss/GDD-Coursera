@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamId: 1
-  defaultHealth: 3
-  maximumHealth: 3
-  currentHealth: 3
+  defaultHealth: 5
+  maximumHealth: 5
+  currentHealth: 5
   invincibilityTime: 0
   isAlwaysInvincible: 0
   useLives: 0
@@ -250,10 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75388997f8d4264a86b7441dc9ea74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab:
-  - {fileID: 4641165794769155162, guid: 5089b9cd653abda4ba6013a20e42c774, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  projectilePrefab: {fileID: 0}
   projectileHolder: {fileID: 0}
   playerController: {fileID: 0}
   gameManager: {fileID: 0}

@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pages:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentPage: 0
   defaultPage: 0
   pausePageIndex: 1

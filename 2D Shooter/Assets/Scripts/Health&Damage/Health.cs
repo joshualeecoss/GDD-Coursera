@@ -117,8 +117,19 @@ public class Health : MonoBehaviour
     /// </summary>
     void Respawn()
     {
+
+    }
+
+    IEnumerator RespawnCoroutine()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
+        yield return new WaitForSeconds(3);
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<PolygonCollider2D>().enabled = true;
         transform.position = respawnPosition;
         currentHealth = defaultHealth;
+
     }
 
     /// <summary>
@@ -235,7 +246,7 @@ public class Health : MonoBehaviour
         PlayerPrefs.SetInt("lives", currentLives);
         if (PlayerPrefs.GetInt("lives") > 0)
         {
-            Respawn();
+            StartCoroutine(RespawnCoroutine());
         }
         else
         {
