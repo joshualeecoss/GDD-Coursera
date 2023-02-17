@@ -30,7 +30,6 @@ public class ShootingController : MonoBehaviour
 
     // The last time this component was fired
     private float lastFired = Mathf.NegativeInfinity;
-    private int classType = 0;
 
     [Header("Effects")]
     [Tooltip("The effect to create when this fires")]
@@ -71,15 +70,13 @@ public class ShootingController : MonoBehaviour
     {
         if (gameManager != null && isPlayerControlled)
         {
-            if (gameManager.GetClassType() == 0)
+            if (PlayerPrefs.GetInt("class") == 0)
             {
                 fireRate = 0.05f;
-                classType = 0;
             }
-            else if (gameManager.GetClassType() == 1)
+            else if (PlayerPrefs.GetInt("class") == 1)
             {
                 fireRate = 0.25f;
-                classType = 1;
             }
         }
     }

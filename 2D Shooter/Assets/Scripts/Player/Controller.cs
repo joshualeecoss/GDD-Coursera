@@ -22,9 +22,6 @@ public class Controller : MonoBehaviour
     [Tooltip("The speed at which the player rotates in asteroids movement mode")]
     public float rotationSpeed = 60f;
 
-    [Header("Character Class")]
-    public int classType = 0;
-
     //The InputManager to read input from
     private InputManager inputManager;
 
@@ -110,12 +107,12 @@ public class Controller : MonoBehaviour
     private void SetupClass()
     {
         sprite = GetComponent<SpriteRenderer>();
-        if (gameManager.GetClassType() == 0)
+        if (PlayerPrefs.GetInt("class") == 0)
         {
             moveSpeed = 10.0f;
             rotationSpeed = 60f;
         }
-        else if (gameManager.GetClassType() == 1)
+        else if (PlayerPrefs.GetInt("class") == 1)
         {
             moveSpeed = 5.0f;
             rotationSpeed = 50f;
@@ -286,15 +283,6 @@ public class Controller : MonoBehaviour
         }
     }
 
-    public int GetClassType()
-    {
-        return classType;
-    }
-
-    public void SetClassType(int classType)
-    {
-        this.classType = classType;
-    }
 
     public void SetProjectile(GameObject projectile)
     {

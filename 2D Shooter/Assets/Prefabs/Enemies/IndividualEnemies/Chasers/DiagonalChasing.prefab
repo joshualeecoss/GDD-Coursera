@@ -43,10 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75388997f8d4264a86b7441dc9ea74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  projectilePrefab: {fileID: 0}
   projectileHolder: {fileID: 0}
   playerController: {fileID: 0}
   gameManager: {fileID: 0}
@@ -175,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  scoreValue: 10
+  scoreValue: 30
   followTarget: {fileID: 0}
   followRange: 100
   guns:
@@ -305,10 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75388997f8d4264a86b7441dc9ea74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  projectilePrefab: {fileID: 0}
   projectileHolder: {fileID: 0}
   playerController: {fileID: 0}
   gameManager: {fileID: 0}

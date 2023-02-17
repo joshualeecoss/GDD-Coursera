@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  scoreValue: 5
+  scoreValue: 30
   followTarget: {fileID: 0}
   followRange: 30
   guns:

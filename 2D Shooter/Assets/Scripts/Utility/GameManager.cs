@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("The player gameobject")]
     public GameObject player = null;
-    public int classType = 0;
 
     [Header("Scores")]
     // The current player score in the game
@@ -379,20 +378,14 @@ public class GameManager : MonoBehaviour
 
     public void CharacterButtonClicked(int classType)
     {
-        this.classType = classType;
-    }
-
-
-    public int GetClassType()
-    {
-        return this.classType;
+        PlayerPrefs.SetInt("class", classType);
     }
 
     public void SetPlayerProjectile()
     {
         if (player != null)
         {
-            player.GetComponent<Controller>().SetProjectile(playerProjectiles[classType]);
+            player.GetComponent<Controller>().SetProjectile(playerProjectiles[PlayerPrefs.GetInt("class")]);
         }
     }
 
