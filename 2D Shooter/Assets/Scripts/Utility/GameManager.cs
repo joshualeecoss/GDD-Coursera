@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public GameObject player = null;
     public int classType = 0;
 
-
     [Header("Scores")]
     // The current player score in the game
     [Tooltip("The player's score")]
@@ -41,6 +40,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
+    public static int enemiesLeft = 0;
+
+    public GameObject[] playerProjectiles;
+
+
     // The highest score obtained by this player
     [Tooltip("The highest score acheived on this device")]
     public int highScore = 0;
@@ -48,6 +54,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Progress / Victory Settings")]
     [Tooltip("Whether the game is winnable or not \nDefault: true")]
     public bool gameIsWinnable = true;
+    public static bool infiniteGame = false;
     [Tooltip("The number of enemies that must be defeated to win the game")]
     public int enemiesToDefeat = 10;
 
@@ -85,6 +92,8 @@ public class GameManager : MonoBehaviour
         {
             DestroyImmediate(this);
         }
+        enemiesLeft = enemiesToDefeat;
+        infiniteGame = !gameIsWinnable;
     }
 
     /// <summary>
@@ -98,6 +107,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         HandleStartUp();
+        SetPlayerProjectile();
     }
 
     /// <summary>
@@ -210,6 +220,7 @@ public class GameManager : MonoBehaviour
     {
         SaveHighScore();
         ResetScore();
+        ResetLives();
     }
 
     /// <summary>
@@ -231,6 +242,15 @@ public class GameManager : MonoBehaviour
         UpdateUIElements();
     }
 
+    public static void MinusFromTotal()
+    {
+        if (!infiniteGame)
+        {
+            enemiesLeft -= 1;
+            UpdateUIElements();
+        }
+    }
+
     /// <summary>
     /// Description:
     /// Resets the current player score
@@ -243,6 +263,11 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("score", 0);
         score = 0;
+    }
+
+    public static void ResetLives()
+    {
+        PlayerPrefs.SetInt("lives", 0);
     }
 
     /// <summary>
@@ -362,4 +387,15 @@ public class GameManager : MonoBehaviour
     {
         return this.classType;
     }
+
+    public void SetPlayerProjectile()
+    {
+        if (player != null)
+        {
+            player.GetComponent<Controller>().SetProjectile(playerProjectiles[classType]);
+        }
+    }
+
+
+
 }

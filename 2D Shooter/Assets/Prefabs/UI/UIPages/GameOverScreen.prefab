@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7133995560680975116}
   - component: {fileID: 7996787924149477727}
   - component: {fileID: 6927437053403981391}
+  - component: {fileID: 6071360142203067898}
   m_Layer: 5
   m_Name: UIScoreText
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Score: 0'
+--- !u!114 &6071360142203067898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250891342626291520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14346f8fcc871204299029fedba2a3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 6927437053403981391}
 --- !u!1 &2522970030014934890
 GameObject:
   m_ObjectHideFlags: 0

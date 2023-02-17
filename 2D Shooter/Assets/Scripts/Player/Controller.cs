@@ -295,4 +295,9 @@ public class Controller : MonoBehaviour
     {
         this.classType = classType;
     }
+
+    public void SetProjectile(GameObject projectile)
+    {
+        GetComponent<ShootingController>().projectilePrefab = projectile;
+    }
 }

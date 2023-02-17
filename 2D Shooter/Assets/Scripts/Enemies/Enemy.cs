@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private void LateUpdate()
     {
-        HandleBehaviour();       
+        HandleBehaviour();
     }
 
     /// <summary>
@@ -112,6 +112,7 @@ public class Enemy : MonoBehaviour
     {
         AddToScore();
         IncrementEnemiesDefeated();
+        MinusOne();
     }
 
     /// <summary>
@@ -130,6 +131,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void MinusOne()
+    {
+        if (GameManager.instance != null && !GameManager.instance.gameIsOver)
+        {
+            GameManager.MinusFromTotal();
+        }
+    }
+
     /// <summary>
     /// Description:
     /// Increments the game manager's number of defeated enemies
@@ -143,7 +152,7 @@ public class Enemy : MonoBehaviour
         if (GameManager.instance != null && !GameManager.instance.gameIsOver)
         {
             GameManager.instance.IncrementEnemiesDefeated();
-        }       
+        }
     }
 
     /// <summary>
@@ -178,7 +187,7 @@ public class Enemy : MonoBehaviour
     protected virtual Vector3 GetDesiredMovement()
     {
         Vector3 movement;
-        switch(movementMode)
+        switch (movementMode)
         {
             case MovementModes.FollowTarget:
                 movement = GetFollowPlayerMovement();

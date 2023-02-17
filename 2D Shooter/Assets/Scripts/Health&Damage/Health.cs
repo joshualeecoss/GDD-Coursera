@@ -45,6 +45,14 @@ public class Health : MonoBehaviour
     void Start()
     {
         SetRespawnPoint(transform.position);
+        if (PlayerPrefs.GetInt("lives") <= currentLives && PlayerPrefs.GetInt("lives") != 0)
+        {
+            currentLives = PlayerPrefs.GetInt("lives");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("lives", currentLives);
+        }
     }
 
     /// <summary>
@@ -58,6 +66,7 @@ public class Health : MonoBehaviour
     void Update()
     {
         InvincibilityCheck();
+
     }
 
     // The specific game time when the health can be damged again
@@ -204,11 +213,12 @@ public class Health : MonoBehaviour
         if (useLives)
         {
             HandleDeathWithLives();
+
         }
         else
         {
             HandleDeathWithoutLives();
-        }      
+        }
     }
 
     /// <summary>
@@ -222,7 +232,8 @@ public class Health : MonoBehaviour
     void HandleDeathWithLives()
     {
         currentLives -= 1;
-        if (currentLives > 0)
+        PlayerPrefs.SetInt("lives", currentLives);
+        if (PlayerPrefs.GetInt("lives") > 0)
         {
             Respawn();
         }
@@ -238,6 +249,7 @@ public class Health : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
+        GameManager.UpdateUIElements();
     }
 
     /// <summary>

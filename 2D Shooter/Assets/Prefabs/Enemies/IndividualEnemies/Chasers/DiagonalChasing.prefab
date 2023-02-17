@@ -43,8 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75388997f8d4264a86b7441dc9ea74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4641165794769155162, guid: 5089b9cd653abda4ba6013a20e42c774, type: 3}
+  projectilePrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   projectileHolder: {fileID: 0}
+  playerController: {fileID: 0}
+  gameManager: {fileID: 0}
   isPlayerControlled: 0
   fireRate: 3
   projectileSpread: 1
@@ -174,7 +179,7 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   followRange: 100
   guns:
-  - {fileID: 8282131553695226666}
+  - {fileID: 1137135870915077346, guid: 721a747dce90ff742814fb081e8ec6aa, type: 3}
   - {fileID: 8282131552140209218}
   shootMode: 1
   movementMode: 1
@@ -300,8 +305,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75388997f8d4264a86b7441dc9ea74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4641165794769155162, guid: 5089b9cd653abda4ba6013a20e42c774, type: 3}
+  projectilePrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   projectileHolder: {fileID: 0}
+  playerController: {fileID: 0}
+  gameManager: {fileID: 0}
   isPlayerControlled: 0
   fireRate: 3
   projectileSpread: 1

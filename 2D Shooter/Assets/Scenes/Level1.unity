@@ -1735,7 +1735,7 @@ PrefabInstance:
       objectReference: {fileID: 1462396889}
     - target: {fileID: 4867940027157724161, guid: fb3863dec9ed61644a34a2455dd1bc1d, type: 3}
       propertyPath: enemiesToDefeat
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4867940027157724161, guid: fb3863dec9ed61644a34a2455dd1bc1d, type: 3}
       propertyPath: gameOverPageIndex
@@ -1745,6 +1745,18 @@ PrefabInstance:
       propertyPath: gameVictoryPageIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4867940027157724161, guid: fb3863dec9ed61644a34a2455dd1bc1d, type: 3}
+      propertyPath: playerProjectiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867940027157724161, guid: fb3863dec9ed61644a34a2455dd1bc1d, type: 3}
+      propertyPath: playerProjectiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 3562651836113712045, guid: aee1688b385340b4bab2b46707955895, type: 3}
+    - target: {fileID: 4867940027157724161, guid: fb3863dec9ed61644a34a2455dd1bc1d, type: 3}
+      propertyPath: playerProjectiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 3562651836113712045, guid: f2177d3df08bd814a946b39089a2982e, type: 3}
     - target: {fileID: 4867940027157724174, guid: fb3863dec9ed61644a34a2455dd1bc1d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2511,6 +2523,17 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4187006898440520330, guid: a337c4024917e26469fcc31327b17c37, type: 3}
   m_PrefabInstance: {fileID: 4187006898966955724}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621181508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4187006898440520328, guid: a337c4024917e26469fcc31327b17c37, type: 3}
+  m_PrefabInstance: {fileID: 4187006898966955724}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621181503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c9a4613bbc6ce4b809b21678067793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1621181509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4187006898440520335, guid: a337c4024917e26469fcc31327b17c37, type: 3}
@@ -3491,6 +3514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2169683867584977110, guid: 8f89bfcbf1d986a42b94947daa6b4a6e, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1621181508}
     - target: {fileID: 5292537548762230628, guid: 8f89bfcbf1d986a42b94947daa6b4a6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2

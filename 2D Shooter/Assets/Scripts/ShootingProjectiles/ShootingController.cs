@@ -10,7 +10,7 @@ public class ShootingController : MonoBehaviour
 {
     [Header("GameObject/Component References")]
     [Tooltip("The projectile to be fired.")]
-    public GameObject[] projectilePrefab = null;
+    public GameObject projectilePrefab = null;
     [Tooltip("The transform in the heirarchy which holds projectiles if any")]
     public Transform projectileHolder = null;
     public Controller playerController = null;
@@ -30,7 +30,7 @@ public class ShootingController : MonoBehaviour
 
     // The last time this component was fired
     private float lastFired = Mathf.NegativeInfinity;
-    private int classType;
+    private int classType = 0;
 
     [Header("Effects")]
     [Tooltip("The effect to create when this fires")]
@@ -69,7 +69,7 @@ public class ShootingController : MonoBehaviour
 
     void SetupBulletType()
     {
-        if (gameManager != null)
+        if (gameManager != null && isPlayerControlled)
         {
             if (gameManager.GetClassType() == 0)
             {
@@ -164,10 +164,10 @@ public class ShootingController : MonoBehaviour
     public void SpawnProjectile()
     {
         // Check that the prefab is valid
-        if (projectilePrefab[classType] != null)
+        if (projectilePrefab != null)
         {
             // Create the projectile
-            GameObject projectileGameObject = Instantiate(projectilePrefab[classType], transform.position, transform.rotation, null);
+            GameObject projectileGameObject = Instantiate(projectilePrefab, transform.position, transform.rotation, null);
 
             // Account for spread
             Vector3 rotationEulerAngles = projectileGameObject.transform.rotation.eulerAngles;
@@ -180,5 +180,6 @@ public class ShootingController : MonoBehaviour
                 projectileGameObject.transform.SetParent(projectileHolder);
             }
         }
+
     }
 }
