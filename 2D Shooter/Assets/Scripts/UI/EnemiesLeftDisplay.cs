@@ -31,7 +31,7 @@ public class EnemiesLeftDisplay : UIelement
             }
             else
             {
-                displayText.text = "EnemiesLeft: INFINITE";
+                displayText.text = "Enemies Left: INFINITE";
             }
         }
     }
