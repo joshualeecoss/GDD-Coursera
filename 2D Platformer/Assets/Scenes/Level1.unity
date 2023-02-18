@@ -1564,6 +1564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6027391878699282497, guid: 6b278329ac77eb7438a3ac3a58e97860, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2c7cc4c3cc08ca44ebdd6f1571de0373, type: 3}
     - target: {fileID: 6027391878917048940, guid: 6b278329ac77eb7438a3ac3a58e97860, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level2
@@ -2280,17 +2284,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8128307141711142836, guid: f006cf5465b49454cadf7963274a18f5, type: 3}
+      propertyPath: extraLifePointThreshold
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8128307141711142839, guid: f006cf5465b49454cadf7963274a18f5, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8128307141711142839, guid: f006cf5465b49454cadf7963274a18f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9452608
+      value: -7.43
       objectReference: {fileID: 0}
     - target: {fileID: 8128307141711142839, guid: f006cf5465b49454cadf7963274a18f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3480868
+      value: -3.45
       objectReference: {fileID: 0}
     - target: {fileID: 8128307141711142839, guid: f006cf5465b49454cadf7963274a18f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2529,7 +2537,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4004,14 +4012,14 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 2971426260718290345, guid: dcecc82fcf570b447b67d61ea26c35e2, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: -6551456632857933372, guid: dcecc82fcf570b447b67d61ea26c35e2, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -4233739483619845583, guid: dcecc82fcf570b447b67d61ea26c35e2, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 2971426260718290345, guid: dcecc82fcf570b447b67d61ea26c35e2, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 3912554482014063563, guid: dcecc82fcf570b447b67d61ea26c35e2, type: 3}
   - m_RefCount: 6

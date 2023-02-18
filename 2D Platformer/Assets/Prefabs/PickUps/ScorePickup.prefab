@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpEffect: {fileID: 9121507372709277508, guid: 19d8f600ae4d6fb4abd8da0ac8dd13ac, type: 3}
+  extraLifeEffect: {fileID: 3197419633254958420, guid: ff5e31bc7ddd2204a88965559a74d17a, type: 3}
   scoreAmount: 1
-  extraLifePointThreshold: 4
 --- !u!95 &7538088704310646587
 Animator:
   serializedVersion: 3

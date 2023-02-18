@@ -7,9 +7,13 @@ using UnityEngine;
 /// </summary>
 public class ScorePickup : Pickup
 {
+    [Tooltip("Extra life effect if threshold is met")]
+    public GameObject extraLifeEffect = null;
+
     [Header("Score Settings")]
     [Tooltip("Amount of score to add when picked up")]
     public int scoreAmount = 1;
+
 
     private readonly int extraLife = 1;
 
@@ -30,6 +34,9 @@ public class ScorePickup : Pickup
             if ((GameManager.score % collision.gameObject.GetComponent<Health>().extraLifePointThreshold) == 0)
             {
                 collision.gameObject.GetComponent<Health>().AddLives(extraLife);
+
+                Instantiate(extraLifeEffect, transform.position, transform.rotation, null);
+
             }
         }
         base.DoOnPickup(collision);
