@@ -231,7 +231,7 @@ public class PlayerController : MonoBehaviour
             foreach (string layerName in passThroughLayers)
             {
                 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer(layerName), true);
-            } 
+            }
         }
         else
         {

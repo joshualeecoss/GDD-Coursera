@@ -11,6 +11,8 @@ public class ScorePickup : Pickup
     [Tooltip("Amount of score to add when picked up")]
     public int scoreAmount = 1;
 
+    private readonly int extraLife = 1;
+
     /// <summary>
     /// Description:
     /// When picked up, adds to the player's score
@@ -25,6 +27,10 @@ public class ScorePickup : Pickup
         if (collision.tag == "Player" && collision.gameObject.GetComponent<Health>() != null)
         {
             GameManager.AddScore(scoreAmount);
+            if ((GameManager.score % collision.gameObject.GetComponent<Health>().extraLifePointThreshold) == 0)
+            {
+                collision.gameObject.GetComponent<Health>().AddLives(extraLife);
+            }
         }
         base.DoOnPickup(collision);
     }

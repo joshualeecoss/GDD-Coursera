@@ -33,6 +33,8 @@ public class Health : MonoBehaviour
     public int maximumLives = 5;
     [Tooltip("The amount of time to wait before respawning")]
     public float respawnWaitTime = 3f;
+    [Tooltip("The number of points needed to gain an extra life")]
+    public int extraLifePointThreshold = 20;
 
     /// <summary>
     /// Description:
@@ -63,7 +65,7 @@ public class Health : MonoBehaviour
 
     // The time to respawn at
     private float respawnTime;
-    
+
     /// <summary>
     /// Description:
     /// Checks to see if the player should be respawned yet and only respawns them if the alloted time has passed
@@ -262,7 +264,7 @@ public class Health : MonoBehaviour
                 else
                 {
                     respawnTime = Time.time + respawnWaitTime;
-                } 
+                }
             }
             else
             {
@@ -276,7 +278,7 @@ public class Health : MonoBehaviour
                 }
                 GameOver();
             }
-            
+
         }
         else
         {
