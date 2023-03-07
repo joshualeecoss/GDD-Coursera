@@ -51,6 +51,8 @@ MonoBehaviour:
   pauseButton: 0
   horizontalLookAxis: 0
   verticalLookAxis: 0
+  shootStarted: 0
+  shootHeld: 0
 --- !u!114 &7812274251997823485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +142,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e3be641c-6bdb-41b6-bd5f-a0dd139d1e2e
     m_ActionName: Player/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7812274251997823487}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: GetShootInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d8956572-6ff8-4e67-8301-5f8c888ad1be
+    m_ActionName: Player/Shoot[/Keyboard/j]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

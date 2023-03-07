@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Feet
+  - Bullet
+  - Enemy
+  - Flying
+  - EnemyBullet
+  - Foreground
   layers:
   - Default
   - TransparentFX

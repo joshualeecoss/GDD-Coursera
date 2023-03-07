@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 4850146714588082594}
   m_Layer: 0
   m_Name: WaypointEnemy
-  m_TagString: Untagged
+  m_TagString: Flying
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,14 +203,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamId: 1
-  defaultHealth: 1
-  maximumHealth: 1
-  currentHealth: 1
+  defaultHealth: 2
+  maximumHealth: 2
+  currentHealth: 2
   invincibilityTime: 0
   useLives: 0
   currentLives: 3
   maximumLives: 5
   respawnWaitTime: 3
+  extraLifePointThreshold: 20
   isInvincible: 0
   deathEffect: {fileID: 8947246785620148104, guid: 428b595752997a94d8ba41a58852d18c, type: 3}
   hitEffect: {fileID: 93431346535372284, guid: 7a1ea1c65fff14c41b5fafe65981feae, type: 3}
@@ -260,7 +261,7 @@ GameObject:
   - component: {fileID: 6795010826911869779}
   m_Layer: 0
   m_Name: WaypointEnemyParent
-  m_TagString: Untagged
+  m_TagString: Flying
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,6 +419,10 @@ PrefabInstance:
       value: Waypoint
       objectReference: {fileID: 0}
     - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -430,6 +435,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -439,14 +448,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5984390039343562538, guid: d2703a0b11d96744eaf00b239539f2f7, type: 3}

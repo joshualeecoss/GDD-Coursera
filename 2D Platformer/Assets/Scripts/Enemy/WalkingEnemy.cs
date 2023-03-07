@@ -11,7 +11,7 @@ public class WalkingEnemy : EnemyBase
     /// Enum to track which direction this enemy is walking
     /// </summary>
     public enum WalkDirections { Right, Left, None }
-    
+
 
 
     [Header("References")]
@@ -105,7 +105,7 @@ public class WalkingEnemy : EnemyBase
         {
             TurnAround();
         }
-        if (spriteRenderer != null)
+        if (spriteRenderer != null && GetComponentInChildren<GunController>() == null)
         {
             spriteRenderer.flipX = (walkDirection == WalkDirections.Right);
         }
@@ -174,7 +174,7 @@ public class WalkingEnemy : EnemyBase
         GroundCheck check = null;
         if (walkDirection == WalkDirections.Left)
         {
-            check = leftEdge; 
+            check = leftEdge;
         }
         else if (walkDirection == WalkDirections.Right)
         {

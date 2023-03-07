@@ -53,6 +53,8 @@ public class InputManager : MonoBehaviour
         jumpStarted = default;
         jumpHeld = default;
 
+        firePressed = default;
+
         pauseButton = default;
     }
 
@@ -77,7 +79,7 @@ public class InputManager : MonoBehaviour
         horizontalMovement = movementVector.x;
         verticalMovement = movementVector.y;
     }
-    
+
     [Header("Jump Input")]
     [Tooltip("Whether a jump was started this frame.")]
     public bool jumpStarted = false;
@@ -100,7 +102,7 @@ public class InputManager : MonoBehaviour
         if (InputManager.instance.isActiveAndEnabled)
         {
             StartCoroutine("ResetJumpStart");
-        } 
+        }
     }
 
     /// <summary>
@@ -117,7 +119,26 @@ public class InputManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         jumpStarted = false;
     }
-    
+
+    public bool firePressed = false;
+    public bool fireHeld = false;
+
+    public void GetFireInput(InputAction.CallbackContext callbackContext)
+    {
+        firePressed = !callbackContext.canceled;
+        fireHeld = !callbackContext.canceled;
+        if (InputManager.instance.isActiveAndEnabled)
+        {
+            StartCoroutine("ResetFire");
+        }
+    }
+
+    private IEnumerator ResetFire()
+    {
+        yield return new WaitForEndOfFrame();
+        firePressed = false;
+    }
+
     [Header("Pause Input")]
     [Tooltip("The state of the pause button")]
     public float pauseButton = 0;
@@ -135,7 +156,7 @@ public class InputManager : MonoBehaviour
     {
         pauseButton = callbackContext.ReadValue<float>();
     }
-    
+
     [Header("Mouse Input")]
     [Tooltip("The horizontal mouse input of the player.")]
     public float horizontalLookAxis;
@@ -156,5 +177,6 @@ public class InputManager : MonoBehaviour
         Vector2 mouseLookVector = callbackContext.ReadValue<Vector2>();
         horizontalLookAxis = mouseLookVector.x;
         verticalLookAxis = mouseLookVector.y;
-    }   
+    }
+
 }

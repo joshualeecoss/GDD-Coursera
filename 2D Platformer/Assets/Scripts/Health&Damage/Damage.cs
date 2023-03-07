@@ -91,10 +91,20 @@ public class Damage : MonoBehaviour
         {
             if (collidedHealth.teamId != this.teamId)
             {
-                collidedHealth.TakeDamage(damageAmount);
-                if (destroyAfterDamage)
+                if (this.gameObject.tag == "Bullet" && collisionGameObject.tag == "Flying")
                 {
-                    Destroy(this.gameObject);
+                    if (destroyAfterDamage)
+                    {
+                        Destroy(this.gameObject);
+                    }
+                }
+                else
+                {
+                    collidedHealth.TakeDamage(damageAmount);
+                    if (destroyAfterDamage)
+                    {
+                        Destroy(this.gameObject);
+                    }
                 }
             }
         }
