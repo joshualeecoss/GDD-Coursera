@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public static class KeyRing
 {
+
     // The IDs of the keys held by the player
     private static HashSet<int> keyIDs = new HashSet<int>() { };
 

@@ -186,7 +186,7 @@ MonoBehaviour:
   dropPercentages:
   - 0.25
   - 0.25
-  - 0.25
+  - 0.1
 --- !u!114 &2994036116951472063
 MonoBehaviour:
   m_ObjectHideFlags: 0

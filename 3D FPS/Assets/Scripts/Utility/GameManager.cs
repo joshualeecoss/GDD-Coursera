@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Prefs Settings")]
     public bool resetPlayerPrefsSettings = false;
+    private int buildingDoorKey = 100;
 
     /// <summary>
     /// Description:
@@ -130,6 +131,7 @@ public class GameManager : MonoBehaviour
             }
         }
         KeyRing.ClearKeyRing();
+        KeyRing.AddKey(buildingDoorKey);
     }
 
     /// <summary>
